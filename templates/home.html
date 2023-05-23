@@ -1,7 +1,8 @@
 <h1>PC Builds</h1>
 
 {% for post in object_list %}
-    {{post.title}}
-    {{post.author}}
+    <ul>
+        <li>{{post.title}} - {{post.author}}</li>
+        <li><img src="{{post.feature_image}}"></li>
 
 {% endfor %}
