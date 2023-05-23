@@ -3,9 +3,8 @@ from django.views.generic import ListView, CreateView
 from .models import Post
 
 
-
 class Home(ListView):
-    template_name = 'home.html'
+    model = Post
     template_name = 'home.html'
 
 

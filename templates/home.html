@@ -1,8 +1,10 @@
 <h1>PC Builds</h1>
 
+{% load cloudinary %}
+{% cloudinary photo.image THUMBNAIL %}
 {% for post in object_list %}
     <ul>
         <li>{{post.title}} - {{post.author}}</li>
-        <li><img src="{{post.feature_image}}"></li>
+        <li><img src="{{post.feature_image.url}}"></li>
 
 {% endfor %}
