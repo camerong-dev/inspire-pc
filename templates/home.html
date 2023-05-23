@@ -4,7 +4,8 @@
 {% cloudinary photo.image THUMBNAIL %}
 {% for post in object_list %}
     <ul>
-        <li>{{post.title}} - {{post.author}}</li>
+        <li><a href="{% url 'pc-details' post.pk %}"{{post.title}} - {{post.author}}</li>
         <li><img src="{{post.feature_image.url}}"></li>
+    </ul>
 
 {% endfor %}
