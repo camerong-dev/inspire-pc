@@ -12,7 +12,7 @@ class Post(models.Model):
     secondary_image = CloudinaryField('image')
     tertiary_image = CloudinaryField('image')
     created_on = models.DateTimeField(auto_now_add=True)
-    cpu_content = models.CharField(max_length=150, default='CPU')
+    cpu_content = models.CharField(max_length=150)
     cpu_cooler_content = models.CharField(max_length=150, default='CPU-Cooler')
     motherboard_content = models.CharField(
         max_length=150, default='Motherboard')
@@ -32,4 +32,3 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-
