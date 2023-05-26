@@ -28,7 +28,7 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='pc_likes', blank=True)
 
     def get_absolute_url(self):
-        return reverse('pc-details', args=(str(self.id)))
+        return reverse('pc-details', kwargs={"pk":self.id} )
 
     class Meta:
         ordering = ['-created_on']
