@@ -7,7 +7,7 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'feature_image', 'secondary_image', 'tertiary_image', 'cpu_content', 'cpu_cooler_content', 'motherboard_content', 'ram_content', 'storage_content', 'gpu_content', 'psu_content', 'case_content', 'fans_content')
 
-        widget = {
+        widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control item', 'placeholder': 'Name of your PC'}),
             'feature_image': forms.FileInput(attrs={'class': 'form-control item'}),
             'secondary_image': forms.FileInput(attrs={'class': 'form-control item'}),
