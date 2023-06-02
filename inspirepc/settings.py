@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-camerong-dev-inspire-pc-jajgt9cq2u.us2.codeanyapp.com',
+    '8000-camerong-dev-inspire-pc-jke99ylm15.us2.codeanyapp.com',
     'localhost',
     'inspire-pc.herokuapp.com',
 ]
