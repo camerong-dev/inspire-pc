@@ -10,11 +10,11 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='pc_builds')
     feature_image = ContentTypeRestrictedFileField(
-        content_types=['image/jpeg', 'image/png'],max_upload_size=10000000)
+        content_types=['image/jpeg', 'image/png'], max_upload_size=10000000)
     secondary_image = ContentTypeRestrictedFileField(
-        content_types=['image/jpeg', 'image/png'],max_upload_size=10000000)
+        content_types=['image/jpeg', 'image/png'], max_upload_size=10000000)
     tertiary_image = ContentTypeRestrictedFileField(
-        content_types=['image/jpeg', 'image/png'],max_upload_size=10000000)
+        content_types=['image/jpeg', 'image/png'], max_upload_size=10000000)
     created_on = models.DateTimeField(auto_now_add=True)
     cpu_content = models.CharField(max_length=150)
     cpu_cooler_content = models.CharField(max_length=150)
