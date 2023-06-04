@@ -35,6 +35,14 @@
         <div class="pagination_rounded justify-content-center mt-4">
             <ul>
                 <li>
+                        {% if page_obj.number > 1 %}
+                            <a class="prev" href="?page=1">
+                                <i class="fa fa-angle-double-left"></i>
+                                First
+                            </a>
+                        {% endif %}
+                    </li>
+                <li>
                     {% if page_obj.has_previous %}
                     <a class="prev" href="?page={{ page_obj.previous_page_number }}">
                         <i class="fa fa-angle-left"></i>
@@ -57,6 +65,11 @@
                 {% if page_obj.number < page_obj.paginator.num_pages|add:'-3' %} 
                 <li>
                     <span class="ellipsis">...</span>
+                </li>
+                {% endif %}
+                {% if page_obj.number < page_obj.paginator.num_pages|add:'-1' %}
+                <li>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
                 </li>
                 {% endif %}
                 <li>
