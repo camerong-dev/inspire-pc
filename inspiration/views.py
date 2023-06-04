@@ -1,12 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DetailView
 from .models import Post
 from .forms import PostForm
+from django.core.paginator import Paginator
 
 
 class Home(ListView):
     model = Post
     template_name = 'home.html'
+    paginate_by = 9
 
 
 class PCDetail(DetailView):
