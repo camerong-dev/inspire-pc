@@ -48,23 +48,25 @@
                 </li>
                 {% endif %}
                 {% for page_number in page_obj.paginator.page_range %}
-                {% if page_number >= page_obj.number|add:'-2' and page_number <= page_obj.number|add:'2' %} <li>
-                    <a href="?page={{ page_number }}">{{ page_number }}</a>
-                    </li>
-                    {% endif %}
-                    {% endfor %}
-                    {% if page_obj.number < page_obj.paginator.num_pages|add:'-3' %} <li>
-                        <span class="ellipsis">...</span>
-                        </li>
-                        {% endif %}
+                    {% if page_number >= page_obj.number|add:'-2' and page_number <= page_obj.number|add:'2' %} 
                         <li>
-                            {% if page_obj.has_next %}
-                            <a class="next" href="?page={{ page_obj.next_page_number }}">
-                                <i class="fa fa-angle-right"></i>
-                                Next
-                            </a>
-                            {% endif %}
+                            <a {% if page_number == page_obj.number %}class="active" {% endif %} href="?page={{ page_number }}">{{ page_number }}</a>
                         </li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.number < page_obj.paginator.num_pages|add:'-3' %} 
+                <li>
+                    <span class="ellipsis">...</span>
+                </li>
+                {% endif %}
+                <li>
+                    {% if page_obj.has_next %}
+                    <a class="next" href="?page={{ page_obj.next_page_number }}">
+                        <i class="fa fa-angle-right"></i>
+                        Next
+                    </a>
+                    {% endif %}
+                </li>
             </ul>
         </div>
     </div>

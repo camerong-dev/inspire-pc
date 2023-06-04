@@ -8,7 +8,7 @@ from django.core.paginator import Paginator
 class Home(ListView):
     model = Post
     template_name = 'home.html'
-    paginate_by = 9
+    paginate_by = 1   
 
 
 class PCDetail(DetailView):
