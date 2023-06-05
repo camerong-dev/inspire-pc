@@ -136,4 +136,61 @@ a:link {
         font-size: 30px;
         line-height: 70px;
     }
+
+    .pagination_rounded ul li {
+        margin: 0 3px;
+      }
+    
+      .pagination_rounded ul li a {
+        height: 25px;
+        width: 25px;
+        line-height: 25px;
+        font-size: 12px;
+      }
+    
+      .pagination_rounded .prev,
+      .pagination_rounded .next {
+        width: 80px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 14px;
+      }
 }
+
+@media (max-width: 768px) {
+    .pagination_rounded ul li {
+      margin: 0 4px;
+    }
+  
+    .pagination_rounded ul li a {
+      height: 28px;
+      width: 28px;
+      line-height: 28px;
+      font-size: 14px;
+    }
+  
+    .pagination_rounded .prev,
+    .pagination_rounded .next {
+      width: 85px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 536px) {
+    .pagination_rounded ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    
+      .pagination_rounded ul li {
+        margin: 5px;
+      }
+    
+      .pagination_rounded .prev,
+      .pagination_rounded .next,
+      .pagination_rounded .first {
+        margin-top: 10px;
+      }
+  }
