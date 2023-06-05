@@ -25,12 +25,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">
                             <i class="fa fa-light fa-magnifying-glass"></i>
                             Find A PC
                         </a>
                     </li>
+
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="/add_pc">
                             <i class="fa fa-light fa-arrow-up-from-bracket"></i>
@@ -38,11 +41,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">
+                            <i class="fa fa-light fa-user"></i>
+                            Log Out
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'login' %}">
                             <i class="fa fa-light fa-user"></i>
                             Log In
                         </a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

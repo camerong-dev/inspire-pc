@@ -35,13 +35,13 @@
         <div class="pagination_rounded justify-content-center mt-4">
             <ul>
                 <li>
-                        {% if page_obj.number > 1 %}
-                            <a class="prev" href="?page=1">
-                                <i class="fa fa-angle-double-left"></i>
-                                First
-                            </a>
-                        {% endif %}
-                    </li>
+                    {% if page_obj.number > 1 %}
+                        <a class="prev" href="?page=1">
+                            <i class="fa fa-angle-double-left"></i>
+                            First
+                        </a>
+                     {% endif %}
+                </li>
                 <li>
                     {% if page_obj.has_previous %}
                     <a class="prev" href="?page={{ page_obj.previous_page_number }}">
