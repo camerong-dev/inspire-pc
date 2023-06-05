@@ -114,7 +114,8 @@ a:link {
     padding: 10px 20px;
 }
 
-.registration-form .create-pc {
+.registration-form .create-pc,
+.registration-form .error-login {
     border-radius: 30px;
     padding: 10px 20px;
     font-size: 18px;
