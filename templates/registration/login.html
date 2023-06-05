@@ -13,13 +13,14 @@
             {% csrf_token %}
             {{ form.as_p }}
             <button type='submit' class='btn btn-block create-pc'>Login</button>
+            <div>
+                <a class="nav-link" href="{% url 'register' %}">
+                    <i class="fa fa-light fa-user"></i>
+                    Register Instead
+                </a>
+            </div>
         </form>
-        <div>
-            <a class="nav-link" href="{% url 'register' %}">
-                <i class="fa fa-light fa-user"></i>
-                Register Instead
-            </a>
-        </div>
+        
     </div>
 </div>
 

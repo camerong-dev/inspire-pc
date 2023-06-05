@@ -12,17 +12,10 @@
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type='submit' class='btn btn-block create-pc'>
-                <a class="nav-link" href="{% url 'register' %}">
-                    <i class="fa fa-light fa-user"></i>
-                    Register Instead
-                </a>
-            </button>
+            <button type='submit' class='btn btn-block create-pc'>Register</button>
         </form>
-        <div class="form-group">
-            
-        </div>
     </div>
+    
 </div>
 
 
