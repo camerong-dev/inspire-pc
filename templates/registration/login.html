@@ -14,7 +14,12 @@
             {{ form.as_p }}
             <button type='submit' class='btn btn-block create-pc'>Login</button>
         </form>
-        <button class="btn btn-block" href="{% url 'register' %}">Register</button>
+        <div>
+            <a class="nav-link" href="{% url 'register' %}">
+                <i class="fa fa-light fa-user"></i>
+                Register Instead
+            </a>
+        </div>
     </div>
 </div>
 
