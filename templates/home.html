@@ -10,19 +10,25 @@
     <header class="p-3 mb-3 border-bottom">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li>
-                        <a class="nav-link px-2" href="#">
-                        Filters
-                        <i class="fa fa-solid fa-filter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link px-2" href="#">
-                        Sort By
-                        </a>
-                    </li>
-                </ul>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Filter By:
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-header">
+                            CPU:
+                            {% for item in cpu_filter_menu %}
+                            <a class="dropdown-item">{{ item }}</a>
+                            {% endfor %}
+                        </li>
+                        <li class="dropdown-header">
+                            GPU:
+                            {% for item in gpu_filter_menu %}
+                            <a class="dropdown-item">{{ item }}</a>
+                            {% endfor %}
+
+                    </ul>
+                  </div>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                 </form>
