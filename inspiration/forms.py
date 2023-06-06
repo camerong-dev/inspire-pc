@@ -7,10 +7,10 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'author', 'feature_image', 'secondary_image',
-                  'tertiary_image', 'cpu_content', 'cpu_cooler_content',
-                  'motherboard_content', 'ram_content', 'storage_content',
-                  'gpu_content', 'psu_content', 'case_content',
-                  'fans_content')
+                  'tertiary_image', 'cpu', 'cpu_manufacturer', 'cpu_cooler',
+                  'motherboard', 'ram', 'storage',
+                  'gpu', 'gpu_manufacturer', 'psu', 'case',
+                  'fans')
 
         widgets = {
             'title': forms.TextInput(attrs={
@@ -29,31 +29,37 @@ class PostForm(forms.ModelForm):
             'tertiary_image': forms.FileInput(attrs={
                 'class': 'form-control item'
             }),
-            'cpu_content': forms.TextInput(attrs={
+            'cpu': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
-            'cpu_cooler_content': forms.TextInput(attrs={
+            'cpu_manufacturer': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
-            'motherboard_content': forms.TextInput(attrs={
+            'cpu_cooler': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
-            'ram_content': forms.TextInput(attrs={
+            'motherboard': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
-            'storage_content': forms.TextInput(attrs={
+            'ram': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
-            'gpu_content': forms.TextInput(attrs={
+            'storage': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
-            'psu_content': forms.TextInput(attrs={
+            'gpu': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
-            'case_content': forms.TextInput(attrs={
+            'gpu_manufacturer': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
-            'fans_content': forms.TextInput(attrs={
+            'psu': forms.TextInput(attrs={
+                'class': 'form-control item'
+            }),
+            'case': forms.TextInput(attrs={
+                'class': 'form-control item'
+            }),
+            'fans': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
         }
