@@ -40,3 +40,24 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+
+class CpuManufacturerOptions(models.Model):
+    cpu_manufacturer = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.cpu_manufacturer
+
+    def get_absolute_url(self):
+        return reverse('pc-details', kwargs={"pk":self.id} )
+
+
+class GpuManufacturerOptions(models.Model):
+    gpu_manufacturer = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.gpu_manufacturer
+
+    def get_absolute_url(self):
+        return reverse('pc-details', kwargs={"pk":self.id} )
+

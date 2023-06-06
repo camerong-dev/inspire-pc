@@ -3,14 +3,16 @@ from .models import Post
 from django.contrib.auth.models import User
 
 
+cpu_choices = [('Intel', 'Intel'), ('AMD', 'AMD')]
+gpu_choices = [('Intel', 'Intel'), ('AMD', 'AMD'), ('Nvidia', 'Nvidia')]
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'author', 'feature_image', 'secondary_image',
                   'tertiary_image', 'cpu', 'cpu_manufacturer', 'cpu_cooler',
                   'motherboard', 'ram', 'storage',
-                  'gpu', 'gpu_manufacturer', 'psu', 'case',
-                  'fans')
+                  'gpu', 'gpu_manufacturer', 'psu', 'case', 'fans')
 
         widgets = {
             'title': forms.TextInput(attrs={
@@ -29,10 +31,10 @@ class PostForm(forms.ModelForm):
             'tertiary_image': forms.FileInput(attrs={
                 'class': 'form-control item'
             }),
-            'cpu': forms.TextInput(attrs={
+            'cpu_manufacturer': forms.Select(choices=cpu_choices, attrs={
                 'class': 'form-control item'
             }),
-            'cpu_manufacturer': forms.TextInput(attrs={
+            'cpu': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
             'cpu_cooler': forms.TextInput(attrs={
@@ -47,10 +49,10 @@ class PostForm(forms.ModelForm):
             'storage': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
-            'gpu': forms.TextInput(attrs={
+            'gpu_manufacturer': forms.Select(choices=gpu_choices, attrs={
                 'class': 'form-control item'
             }),
-            'gpu_manufacturer': forms.TextInput(attrs={
+            'gpu': forms.TextInput(attrs={
                 'class': 'form-control item'
             }),
             'psu': forms.TextInput(attrs={

@@ -11,6 +11,10 @@ class Home(ListView):
     paginate_by = 9
 
 
+def CpuManView(request, cpu_man):
+    return render(request, cpu_man.html)
+
+
 class PCDetail(DetailView):
     model = Post
     template_name = 'pc_detail.html'
