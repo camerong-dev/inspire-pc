@@ -13,7 +13,10 @@
             {% csrf_token %}
             {{ form.as_p }}
             <div class="text-center">
-                <button type='submit' class='btn btn-block form-button'>Register</button>
+                <button type='submit' class='btn btn-block form-button'>
+                    <i class="fa fa-solid fa-user-plus"></i>
+                    Register
+                </button>
             </div>
         </form>
     </div>

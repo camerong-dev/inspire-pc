@@ -1,3 +1,9 @@
+.home-background {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
 .pagination_rounded,
 .pagination_square {
     display: flex;
