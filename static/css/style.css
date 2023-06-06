@@ -25,6 +25,12 @@
     text-align: center;
 }
 
+.card-body .card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .pagination_rounded,
 .pagination_square {
     display: flex;
