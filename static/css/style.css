@@ -72,8 +72,6 @@ a:link {
 .pagination_rounded .prev,
 .pagination_rounded .next {
     border-radius: 35px;
-    width: 90px;
-    height: 34px;
     line-height: 34px;
     text-align: center;
     text-decoration: none;
@@ -176,16 +174,12 @@ a:link {
       }
     
       .pagination_rounded ul li a {
-        height: 25px;
-        width: 25px;
         line-height: 25px;
         font-size: 12px;
       }
     
       .pagination_rounded .prev,
       .pagination_rounded .next {
-        width: 80px;
-        height: 28px;
         line-height: 28px;
         font-size: 14px;
       }
@@ -197,16 +191,12 @@ a:link {
     }
   
     .pagination_rounded ul li a {
-      height: 28px;
-      width: 28px;
       line-height: 28px;
       font-size: 14px;
     }
   
     .pagination_rounded .prev,
     .pagination_rounded .next {
-      width: 85px;
-      height: 30px;
       line-height: 30px;
       font-size: 16px;
     }
