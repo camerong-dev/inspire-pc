@@ -9,17 +9,35 @@
 <div class="album py-5 bg-body-tertiary home-background">
     <header class="p-3 mb-3 border-bottom">
         <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#" class="nav-link px-2 link-secondary">Filters</a></li>
-              <li><a href="#" class="nav-link px-2 link-body-emphasis">Sort By</a></li>
-            </ul>
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-              <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-            </form>
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li>
+                        <a class="nav-link px-2 link-secondary" onclick="showOverlay('filters_overlay')">
+                        Filters
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link px-2 link-body-emphasis" onclick="showOverlay('sort_overlay')">
+                        Sort By
+                        </a>
+                    </li>
+                </ul>
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
           </div>
         </div>
     </header>
+
+    <div id="filters_overlay" class="overlay">
+        <button class="btn btn-primary align-items-center" onclick="hideOverlay('filters_overlay')">Apply</button>
+    </div>
+    
+    <div id="sort_overlay" class="overlay">
+        <button class="btn btn-primary align-items-center" onclick="hideOverlay('sort_overlay')">Apply</button>
+    </div>
+
+    
 
     <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 align-items-start">
