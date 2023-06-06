@@ -73,15 +73,6 @@
                         </a>
                     {% endif %}
                 </li>
-            <!--
-                <li>
-                    {% if page_obj.has_previous %}
-                    <a class="prev" href="?page={{ page_obj.previous_page_number }}">
-                        <i class="fa fa-angle-left" title="Previous Page"></i>
-                    </a>
-                    {% endif %}
-                </li>
-            -->
                 {% if page_obj.number > 3 %}
                 <li>
                     <span class="ellipses">...</span>
@@ -104,15 +95,6 @@
                     <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
                 </li>
                 {% endif %}
-                <!--
-                    <li>
-                    {% if page_obj.has_next %}
-                    <a class="next" href="?page={{ page_obj.next_page_number }}">
-                        <i class="fa fa-angle-right" title="Next Page"></i>
-                    </a>
-                    {% endif %}
-                </li>
-                -->
             </ul>
         </div>
     </div>
