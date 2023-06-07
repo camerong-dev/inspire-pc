@@ -8,6 +8,34 @@
 <p>By: {{ post.author }}</p>
 <br/>
 <br/>
+<div class="album py-3 bg-body-tertiary home-background">
+    <div id="indicators" class="carousel slide" data-bs-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-bs-target="#indicators" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#indicators" data-bs-slide-to="1"></li>
+          <li data-bs-target="#indicators" data-bs-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{post.feature_image.ur}}" class="d-block w-100" alt="Primary image of PC" onerror="this.onerror=null; this.src='../static/media/images/spinning-doge.gif'">
+          </div>
+          <div class="carousel-item">
+            <img src="{{post.secondary_image.url}}" class="d-block w-100" alt="Secondary image of PC">
+          </div>
+          <div class="carousel-item">
+            <img src="{{post.tertiary_image.url}}" class="d-block w-100" alt="Third image of PC">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#indicators" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#indicators" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+</div>
 
 {{ post.cpu }}
 {{ post.gpu }}
