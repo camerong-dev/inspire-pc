@@ -7,10 +7,13 @@ from django.core.paginator import Paginator
 
 def CpuManView(request, cpu_man):
     cpu_man_posts = Post.objects.filter(cpu_manufacturer=cpu_man)
+    paginate_by = 1
     return render(request, 'cpu_man.html', {'cpu_man': cpu_man, 'cpu_man_posts': cpu_man_posts})
+
 
 def GpuManView(request, gpu_man):
     gpu_man_posts = Post.objects.filter(gpu_manufacturer=gpu_man)
+    paginate_by = 1
     return render(request, 'gpu_man.html', {'gpu_man': gpu_man, 'gpu_man_posts': gpu_man_posts})
 
 

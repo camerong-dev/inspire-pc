@@ -18,13 +18,13 @@
                         <li class="dropdown-header">
                             CPU:
                             {% for item in cpu_filter_menu %}
-                            <a class="dropdown-item">{{ item }}</a>
+                            <a class="dropdown-item" href="{% url 'cpuman' item %}">{{ item }}</a>
                             {% endfor %}
                         </li>
                         <li class="dropdown-header">
                             GPU:
                             {% for item in gpu_filter_menu %}
-                            <a class="dropdown-item">{{ item }}</a>
+                            <a class="dropdown-item" href="{% url 'gpuman' item %}">{{ item }}</a>
                             {% endfor %}
 
                     </ul>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             {% endfor %}
-    </div>
+            </div>
         <div class="pagination_rounded justify-content-center mt-4">
             <ul>
                 <li>
@@ -81,7 +81,7 @@
                         </li>
                     {% endif %}
                 {% endfor %}
-                {% if page_obj.number < page_obj.paginator.num_pages|add:'-3' %} 
+                {% if page_obj.number < page_obj.paginator.num_pages|add:'-2' %} 
                 <li>
                     <span class="ellipsis">...</span>
                 </li>

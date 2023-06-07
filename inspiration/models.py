@@ -30,7 +30,7 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='pc_likes', blank=True)
 
     def get_absolute_url(self):
-        return reverse('pc-details', kwargs={"pk":self.id} )
+        return reverse('pc-details', kwargs={"pk": self.id} )
 
     class Meta:
         ordering = ['-created_on']
@@ -49,7 +49,7 @@ class CpuManufacturerOptions(models.Model):
         return self.cpu_manufacturer
 
     def get_absolute_url(self):
-        return reverse('pc-details', kwargs={"pk":self.id} )
+        return reverse('cpuman', kwargs={"cpu_man": self.id} )
 
 
 class GpuManufacturerOptions(models.Model):
@@ -60,4 +60,3 @@ class GpuManufacturerOptions(models.Model):
 
     def get_absolute_url(self):
         return reverse('pc-details', kwargs={"pk":self.id} )
-
