@@ -5,6 +5,10 @@ from .forms import PostForm
 from django.core.paginator import Paginator
 
 
+def SearchView(request):
+    return render(request, 'search_result.html')
+
+
 def CpuManView(request, cpu_man):
     cpu_man_posts = Post.objects.filter(cpu_manufacturer=cpu_man)
     paginator = Paginator(cpu_man_posts, per_page=9)  # Set number of posts per page here
@@ -43,9 +47,7 @@ class AddPC(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'add_pc.html'
-    
+
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-
-    
