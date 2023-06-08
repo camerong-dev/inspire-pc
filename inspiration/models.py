@@ -30,9 +30,11 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('pc-details', kwargs={"pk": self.id} )
+        # This provides a specific key for the created PC to be able to search for it
 
     class Meta:
         ordering = ['-created_on']
+        # Ordering posts from newest to oldest
 
     def __str__(self):
         return self.title

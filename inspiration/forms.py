@@ -5,16 +5,18 @@ from django.contrib.auth.models import User
 
 cpu_choices = [('Intel', 'Intel'), ('AMD', 'AMD')]
 gpu_choices = [('Intel', 'Intel'), ('AMD', 'AMD'), ('Nvidia', 'Nvidia')]
+# Hard coding manufacturer choices here to be used in the choices widgets below
 
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ('author',)
+        exclude = ('author',)  # Excluding author as this gets auto filled
         fields = ('title', 'feature_image', 'secondary_image',
                   'tertiary_image', 'cpu', 'cpu_manufacturer', 'cpu_cooler',
                   'motherboard', 'ram', 'storage',
                   'gpu', 'gpu_manufacturer', 'psu', 'case', 'fans',)
+            # Listing all data fields which requires user input
 
         widgets = {
             'title': forms.TextInput(attrs={
