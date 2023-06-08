@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 
 def CpuManView(request, cpu_man):
     cpu_man_posts = Post.objects.filter(cpu_manufacturer=cpu_man)
-    paginator = Paginator(cpu_man_posts, per_page=1)  # Set number of posts per page here
+    paginator = Paginator(cpu_man_posts, per_page=9)  # Set number of posts per page here
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'cpu_man.html', {'cpu_man': cpu_man, 'page_obj': page_obj, 'cpu_man_posts': page_obj})
@@ -15,7 +15,7 @@ def CpuManView(request, cpu_man):
 
 def GpuManView(request, gpu_man):
     gpu_man_posts = Post.objects.filter(gpu_manufacturer=gpu_man)
-    paginator = Paginator(gpu_man_posts, per_page=1)  # Set number of posts per page here
+    paginator = Paginator(gpu_man_posts, per_page=9)  # Set number of posts per page here
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'gpu_man.html', {'gpu_man': gpu_man, 'page_obj': page_obj, 'gpu_man_posts': page_obj})
@@ -23,7 +23,7 @@ def GpuManView(request, gpu_man):
 class Home(ListView):
     model = Post
     template_name = 'home.html'
-    paginate_by = 9  #Inherits from ListView
+    paginate_by = 1  #Inherits from ListView
 
     def get_context_data(self, *args, **kwargs):
         cpu_filter_menu = CpuManufacturerOptions.objects.all()
@@ -43,3 +43,9 @@ class AddPC(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'add_pc.html'
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    
