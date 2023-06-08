@@ -23,7 +23,7 @@ def GpuManView(request, gpu_man):
 class Home(ListView):
     model = Post
     template_name = 'home.html'
-    paginate_by = 1  #Inherits from ListView
+    paginate_by = 9  #Inherits from ListView
 
     def get_context_data(self, *args, **kwargs):
         cpu_filter_menu = CpuManufacturerOptions.objects.all()
