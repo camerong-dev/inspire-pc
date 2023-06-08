@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 cpu_choices = [('Intel', 'Intel'), ('AMD', 'AMD')]
 gpu_choices = [('Intel', 'Intel'), ('AMD', 'AMD'), ('Nvidia', 'Nvidia')]
 
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post

@@ -1,12 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView, DetailView
 from .models import Post, CpuManufacturerOptions, GpuManufacturerOptions
 from .forms import PostForm
 from django.core.paginator import Paginator
-
-
-def SearchView(request):
-    return render(request, 'search_result.html')
+from django.http import HttpResponseRedirect
 
 
 def CpuManView(request, cpu_man):
