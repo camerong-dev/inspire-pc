@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DetailView
 from .models import Post, CpuManufacturerOptions, GpuManufacturerOptions
 from .forms import PostForm
 from django.core.paginator import Paginator
-from django.http import HttpResponseRedirect
 
 
 def CpuManView(request, cpu_man):
@@ -20,6 +19,7 @@ def GpuManView(request, gpu_man):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'gpu_man.html', {'gpu_man': gpu_man, 'page_obj': page_obj, 'gpu_man_posts': page_obj})
+
 
 class Home(ListView):
     model = Post

@@ -27,7 +27,6 @@ class Post(models.Model):
     psu = models.CharField(max_length=150)
     case = models.CharField(max_length=150)
     fans = models.CharField(max_length=150)
-    likes = models.ManyToManyField(User, related_name='pc_likes', blank=True)
 
     def get_absolute_url(self):
         return reverse('pc-details', kwargs={"pk": self.id} )
@@ -37,9 +36,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-    def number_of_likes(self):
-        return self.likes.count()
 
 
 class CpuManufacturerOptions(models.Model):
