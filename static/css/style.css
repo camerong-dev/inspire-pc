@@ -85,6 +85,21 @@ a:link {
     margin-right: 10px;
 }
 
+.album h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5891ff;
+    text-align: center;
+}
+
+.album h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #5891ff;
+    text-align: center;
+}
+
 .part-group {
     text-align: center;
 }
@@ -247,23 +262,38 @@ a:link {
     width: 900px;
 }
 
-@media (max-width: 1199px){
+@media (max-width: 1199px) {
     .detail-image {
-        width: 720px;
+        max-width: 720px;
+        height: auto;
     }
 }
 
-@media (max-width: 991px){
+@media (max-width: 991px) {
     .detail-image {
+        max-width: 540px;
         height: 380px;
-        width: 540px;
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 576px) {
     .detail-image {
+        max-width: 280px;
         height: 280px;
-        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-image {
+        max-width: 480px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 536px) {
+    .detail-image {
+        max-width: 100%;
+        height: auto;
     }
 }
 
@@ -281,18 +311,18 @@ a:link {
 
     .pagination_rounded ul li {
         margin: 0 3px;
-      }
+    }
     
-      .pagination_rounded ul li a {
+    .pagination_rounded ul li a {
         line-height: 25px;
         font-size: 12px;
-      }
+    }
     
-      .pagination_rounded .prev,
-      .pagination_rounded .next {
+    .pagination_rounded .prev,
+    .pagination_rounded .next {
         line-height: 28px;
         font-size: 14px;
-      }
+    }
 }
 
 @media (max-width: 768px) {
@@ -309,11 +339,6 @@ a:link {
     .pagination_rounded .next {
       line-height: 30px;
       font-size: 16px;
-    }
-
-    .detail-image {
-        width: 480px;
-        height: 380px;
     }
   }
 
