@@ -16,7 +16,7 @@ class PostForm(forms.ModelForm):
                   'tertiary_image', 'cpu', 'cpu_manufacturer', 'cpu_cooler',
                   'motherboard', 'ram', 'storage',
                   'gpu', 'gpu_manufacturer', 'psu', 'case', 'fans',)
-            # Listing all data fields which requires user input
+# Listing all data fields which requires user input
 
         widgets = {
             'title': forms.TextInput(attrs={

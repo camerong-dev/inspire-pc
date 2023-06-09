@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
@@ -38,47 +39,47 @@
         <div class="part-group">
             <ul class="parts">
                 <li class="form-control item">
-                    <img class="part-icon" width="30" height="30" src="../static/media/images/icons8-cpu.png" alt="cpu"/>
+                    <img class="part-icon" width="30" height="30" src="{% static 'media/images/icons8-cpu.png' %}" alt="cpu"/>
                     <p class="part-info">CPU:</p>
                     <p class="part-info">{{post.cpu_manufacturer}}  |  {{post.cpu}}</p>
                 </li>
                 <li class="form-control item">
-                    <img class="part-icon" width="30" height="30" src="../static/media/images/icons8-cooler.png" alt="cpu-cooler"/>
+                    <img class="part-icon" width="30" height="30" src="{% static 'media/images/icons8-cooler.png' %}" alt="cpu-cooler"/>
                     <p class="part-info">CPU Cooler:</p>
                     <p class="part-info">{{post.cpu_cooler}}</p>
                 </li>
                 <li class="form-control item">
-                    <img class="part-icon" width="30" height="30" src="../static/media/images/icons8-motherboard.png" alt="motherboard"/>
+                    <img class="part-icon" width="30" height="30" src="{% static 'media/images/icons8-motherboard.png' %}" alt="motherboard"/>
                     <p class="part-info">Motherboard:</p>
                     <p class="part-info">{{post.motherboard}}</p>
                 </li>
                 <li class="form-control item">
-                    <img class="part-icon" width="30" height="30" src="../static/media/images/icons8-computer-ram.png" alt="ram"/>
+                    <img class="part-icon" width="30" height="30" src="{% static 'media/images/icons8-computer-ram.png' %}" alt="ram"/>
                     <p class="part-info">Memory (RAM):</p>
                     <p class="part-info">{{post.ram}}</p>
                 </li>
                 <li class="form-control item">
-                    <img class="part-icon" width="30" height="30" src="../static/media/images/icons8-hard-drive.png" alt="hard-drive"/>
+                    <img class="part-icon" width="30" height="30" src="{% static 'media/images/icons8-hard-drive.png' %}" alt="hard-drive"/>
                     <p class="part-info">Storage:</p>
                     <p class="part-info">{{post.storage}}</p>
                 </li>
                 <li class="form-control item">
-                    <img class="part-icon" width="30" height="30" src="../static/media/images/icons8-video-card.png" alt="gpu"/>
+                    <img class="part-icon" width="30" height="30" src="{% static 'media/images/icons8-video-card.png' %}" alt="gpu"/>
                     <p class="part-info">GPU:</p>
                     <p class="part-info">{{post.gpu_manufacturer}}  |  {{post.gpu}}</p>
                 </li>
                 <li class="form-control item">
-                    <img class="part-icon" width="30" height="30" src="../static/media/images/icons8-power-supply.png" alt="power supply"/>
+                    <img class="part-icon" width="30" height="30" src="{% static 'media/images/icons8-power-supply.png' %}" alt="power supply"/>
                     <p class="part-info">Power Supply:</p>
                     <p class="part-info">{{post.psu}}</p>
                 </li>
                 <li class="form-control item">
-                    <img class="part-icon" width="30" height="30" src="../static/media/images/icons8-computer-case.png" alt="case"/>
+                    <img class="part-icon" width="30" height="30" src="{% static 'media/images/icons8-computer-case.png' %}" alt="case"/>
                     <p class="part-info">Case:</p>
                     <p class="part-info">{{post.case}}</p>
                 </li>
                 <li class="form-control item">
-                    <img class="part-icon" width="30" height="30" src="../static/media/images/icons8-fan.png" alt="fan"/>
+                    <img class="part-icon" width="30" height="30" src="{% static 'media/images/icons8-fan.png' %}" alt="fan"/>
                     <p class="part-info">Fan(s):</p>
                     <p class="part-info">{{post.fans}}</p>
                 </li>
