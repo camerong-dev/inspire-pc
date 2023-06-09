@@ -260,7 +260,7 @@ a:link {
 @media (max-width: 1199px) {
     .detail-image {
         max-width: 720px;
-        height: auto;
+        height: 520px;
     }
 }
 
