@@ -191,6 +191,12 @@ a:link {
     transition: color 0.3s, background-color 0.3s;
 }
 
+.form-title {
+    margin-bottom: 10px;
+    color: #5891ff;
+    text-align: center;
+}
+
 .registration-form form {
     background-color: #fff;
     max-width: 600px;

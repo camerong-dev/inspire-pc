@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, DetailView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView
 from .models import Post, CpuManufacturerOptions, GpuManufacturerOptions
 from .forms import PostForm
 from django.core.paginator import Paginator
@@ -65,3 +65,9 @@ class AddPC(CreateView):
 This ensures the author of the post, which is being made, will be automatically
 set to the username of the logged in user
 '''
+
+
+class UpdatePost(UpdateView):
+    model = Post
+    template_name = 'update_pc.html'
+    form_class = PostForm

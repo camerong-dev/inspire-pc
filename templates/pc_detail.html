@@ -86,6 +86,9 @@
                     <p class="part-info">Fan(s):</p>
                     <p class="part-info">{{post.fans}}</p>
                 </li>
+                <li class="form-control item">
+                    <a href="{% url 'editpost' post.pk %}">Edit Post</a>
+                </li>
             </ul>
         </div>
     </div>
