@@ -9,9 +9,10 @@
         <div class="form-icon">
             <span><i class="fa fa-thin fa-computer"></i></span>
         </div>
-        <div class="form-group">
+        <div class="form-group text-center">
             <form method="POST" enctype="multipart/form-data">
-                Delete: {{ post.title }}
+                <h3>Delete: {{ post.title }}</h3>
+                <p>Are you sure you want to delete this PC?</p>
                 {% csrf_token %}
                 <button type="submit" class="btn btn-block form-button">
                     <i class="fa fa-solid fa-trash" aria-hidden="true"></i>
