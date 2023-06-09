@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+</br></br></br>
+
+<div class="registration-form">
+    <div class="form-icon">
+        <span><i class="fa fa-thin fa-computer"></i></span>
+    </div>
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+            Delete: {{ post.title }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-block form-button">
+                <i class="fa fa-solid fa-trash" aria-hidden="true"></i>
+                Delete PC
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, DetailView, UpdateView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from .models import Post, CpuManufacturerOptions, GpuManufacturerOptions
 from .forms import PostForm
 from django.core.paginator import Paginator
+from django.urls import reverse_lazy
 
 
 def CpuManView(request, cpu_man):
@@ -71,3 +72,9 @@ class UpdatePost(UpdateView):
     model = Post
     template_name = 'update_pc.html'
     form_class = PostForm
+
+
+class RemovePost(DeleteView):
+    model = Post
+    template_name = 'delete_pc.html'
+    success_url = reverse_lazy('home')

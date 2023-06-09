@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import Home, AddPC, PCDetail, CpuManView, GpuManView, UpdatePost
+from .views import Home, AddPC, PCDetail, CpuManView, GpuManView, UpdatePost, RemovePost
 
 
 urlpatterns = [
@@ -10,4 +10,5 @@ urlpatterns = [
     path('cpu_manufacturer/<str:cpu_man>/', CpuManView, name='cpuman'),
     path('gpu_manufacturer/<str:gpu_man>/', GpuManView, name='gpuman'),
     path('pc-build/edit/<int:pk>', UpdatePost.as_view(), name='editpost'),
+    path('pc-build/delete/<int:pk>', RemovePost.as_view(), name='deletepost'),
 ]
