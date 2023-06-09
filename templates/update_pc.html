@@ -6,6 +6,7 @@
 </br></br></br>
 
 {% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
 
     <div class="registration-form">
         <div class="form-icon">
@@ -22,6 +23,20 @@
             </form>
         </div>
     </div>
+
+    {% else %}
+        <div class="registration-form">
+            <div class="alert alert-danger text-center">
+                <strong>Whoops!</strong> It appears you are not logged in.
+                <br> 
+                Please login below.
+                <br>
+                <div>
+                    <a class="btn btn-block form-button" href="{% url 'login' %}">Log In</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 
 {% else %}
     <div class="registration-form">
