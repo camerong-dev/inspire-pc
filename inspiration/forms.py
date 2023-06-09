@@ -25,15 +25,12 @@ class PostForm(forms.ModelForm):
             }),
             'feature_image': forms.FileInput(attrs={
                 'class': 'form-control item',
-                'placeholder': 'Please upload JPEG or PNG'
             }),
             'secondary_image': forms.FileInput(attrs={
                 'class': 'form-control item',
-                'placeholder': 'Please upload JPEG or PNG'
             }),
             'tertiary_image': forms.FileInput(attrs={
                 'class': 'form-control item',
-                'placeholder': 'Please upload JPEG or PNG'
             }),
             'cpu_manufacturer': forms.Select(choices=cpu_choices, attrs={
                 'class': 'form-control item'
