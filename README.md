@@ -159,7 +159,7 @@ All colors used throughout are listed below.  I found the blue color on [colormi
 
 ### Edit PC 
 
-![Edit PC](static/readme/updatepc-page/jpg)
+![Edit PC](static/readme/updatepc-page.jpg)
 
   - User will see existing data which they uploaded when initially creating the PC.
   - Data can be replaced with what the user desires.
