@@ -8,10 +8,17 @@ from django.urls import reverse_lazy
 
 def CpuManView(request, cpu_man):
     cpu_man_posts = Post.objects.filter(cpu_manufacturer=cpu_man)
-    paginator = Paginator(cpu_man_posts, per_page=9)  # Set number of posts per page here
+    # Set number of posts per page here
+    paginator = Paginator(cpu_man_posts, per_page=9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'cpu_man.html', {'cpu_man': cpu_man, 'page_obj': page_obj, 'cpu_man_posts': page_obj})
+    return render(request,
+                  'cpu_man.html',
+                  {'cpu_man': cpu_man,
+                   'page_obj': page_obj,
+                   'cpu_man_posts': page_obj})
+
+
 '''
 Data is pulled from the post model after being filtered by a cpu
 manufacturer.
@@ -20,14 +27,21 @@ manufacturer.
 
 def GpuManView(request, gpu_man):
     gpu_man_posts = Post.objects.filter(gpu_manufacturer=gpu_man)
-    paginator = Paginator(gpu_man_posts, per_page=9)  # Set number of posts per page here
+    # Set number of posts per page here
+    paginator = Paginator(gpu_man_posts, per_page=9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'gpu_man.html', {'gpu_man': gpu_man, 'page_obj': page_obj, 'gpu_man_posts': page_obj})
+    return render(request,
+                  'gpu_man.html',
+                  {'gpu_man': gpu_man,
+                   'page_obj': page_obj,
+                   'gpu_man_posts': page_obj})
+
+
 '''
 Data is pulled from the post model after being filtered by a gpu
 manufacturer.  The pagination method is different due to being a function
-view, instead of a class view.  
+view, instead of a class view.
 '''
 
 
@@ -61,6 +75,7 @@ class AddPC(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
 
 '''
 This ensures the author of the post, which is being made, will be automatically

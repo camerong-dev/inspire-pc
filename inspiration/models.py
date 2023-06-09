@@ -29,8 +29,9 @@ class Post(models.Model):
     fans = models.CharField(max_length=150)
 
     def get_absolute_url(self):
-        return reverse('pc-details', kwargs={"pk": self.id} )
-        # This provides a specific key for the created PC to be able to search for it
+        return reverse('pc-details', kwargs={"pk": self.id})
+        # This provides a specific key for the created PC to be able to search
+        # for it
 
     class Meta:
         ordering = ['-created_on']
@@ -47,7 +48,7 @@ class CpuManufacturerOptions(models.Model):
         return self.cpu_manufacturer
 
     def get_absolute_url(self):
-        return reverse('cpuman', kwargs={"cpu_man": self.id} )
+        return reverse('cpuman', kwargs={"cpu_man": self.id})
 
 
 class GpuManufacturerOptions(models.Model):
@@ -57,4 +58,4 @@ class GpuManufacturerOptions(models.Model):
         return self.gpu_manufacturer
 
     def get_absolute_url(self):
-        return reverse('pc-details', kwargs={"pk":self.id} )
+        return reverse('pc-details', kwargs={"pk": self.id})
