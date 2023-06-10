@@ -19,6 +19,7 @@ Inspire PC is a site for keen computer enthusiasts to upload pictures and specs 
   - [Languages & Frameworks](#languages-and-frameworks)
   - [Other](#other)
 - [Testing](#testing)
+- [Deployment](#deployment)
 
 ## **User Experiences**
 ### **User Stories**
@@ -223,10 +224,188 @@ All colors used throughout are listed below.  I found the blue color on [colormi
   - [Balsamiq](https://balsamiq.com/) was used to create wireframes
   - [Auto PEP8](https://pypi.org/project/autopep8/) was used at the end to try and tidy up some of my python files
 
+[Back to top](#contents)
+
 
 ## **Testing**
 
 The app was tested during and after development. Results can be found [here](https://github.com/camerong-dev/inspire-pc/blob/main/TESTING.md)
+
+[Back to top](#contents)
+
+## **Deployment**
+### Database
+To create a managed postgres database go to [ElephantSQL](https://www.elephantsql.com/) and Sign Up / Login.
+  - Click on 'Create new instance'
+
+![ElephantSQL create new instance](static/readme/elephant-create.jpg)
+
+  - Name your database, choose the 'Tiny Turtle' plan and click 'Select Region'
+
+![Database name](static/readme/elephant-plane-name.jpg)
+
+  - Choose your region and then create the database. instance.
+  - In the instances page, click the name of your chosen database.
+  - In the details section of the following page copy the postgres url.
+
+![Database details](static/readme/elephant-details.jpg)
+
+You can now use this URL when linking the database to the project repository.
+
+### Deploying to Heroku
+
+  - Sign Up / Login to Heroku
+  - Create a new app from the Heroku dashboard
+
+![Heroku create new app](static/readme/heroku-new.jpg)
+
+  - Give the app a unique name and enter the region of operation then click 'create app'.
+  - From your newly created app choose the settings tab and navigate to 'Reveal Config Vars'.
+  - Paste the ElephantSQL Database url into the DATABASE_URL environment variable.
+
+![Heroku config vars](static/readme/heroku-config.jpg)
+
+  - Create an env.py file in the root directory of your Django project (at the same directory level as requirements.txt and manage.py). Once created add the filename to .gitignore as it stores sensitive info.
+
+![Env.py](static/readme/heroku-envpy.jpg)
+
+  - Paste the ElephantSQL url for the DATABASE_URL value.
+  - Add the following libraries to the settings.py file: Import Path from pathlib, dj_database_url and os.
+
+
+  - Create a secret key to replace the insecure SECRET_KEY variable in the settings.py file. Link the secure key in env.py to the settings.py SECRET_KEY variable with the following code: SECRET_KEY =         os.environ.get('SECRET_KEY')
+  - Add your secret key to HEROKU Config Vars.
+  - Link the DATABASES value to the env.py file with the following code: DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
+  - You can now migrate the app models to the new database using the command: "python3 manage.py makemigrations" then Python3 manage.py migrate.
+
+## Cloudinary
+
+  - Signup/Signin to Cloudinary
+  - Copy the 'cloudinary url' from your account dashboard and paste it as the CLOUDINARY_URL value in env.py.
+  - Add the CLOUDINARY_URL to the Config Vars in Heroku.
+  - Also Add the DISABLE_COLLECTSTATIC Key with the value of 1
+  - Change the static file settings in Django by altering the following.
+  - The STATIC_URL
+  - STATICFILES_STORAGE
+  - STATICFILES_DIRS
+  - STATIC_ROOT
+  - MEDIA URL
+  - DEFAULT_FILE_STORAGE
+
+The STATIC section of settings.py should resemble the following image:
+
+![Static settings](static/readme/settings-static.jpg)
+
+  - Change the TEMPLATES 'DIRS' Setting in Settings.py to [TEMPLATES_DIR] TEMPLATES configuration for the project should resemble the following image:
+
+![Templates settings](static/readme/settings-templates.jpg)
+
+  - Back nearer the top of the settings.py file add the Setting TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+  - Create 3 new folders for static files, media files and HTML templates. (At the same directory level as requirements.txt and manage.py.)
+  - Create a Procfile(capital P) and add the following: web: gunicorn NAME_OF_THE_APP_GOES_HERE.wsgi
+  - Add the app name and herokuapp.com to the list of ALLOWED_HOSTS.
+  - Add and commit the changes to GitHub.
+  - Remove DISABLE_COLLECTSTATIC from Heroku Config Vars
+  - Deploy via the 'Deploy Main Branch' button in the Deployment page of HEROKU.
+  - If you receive an success message, you can click the link provided to view the app in the web browser.
+
+
+## Forking the GitHub Repo
+
+  - Sign up / Login to GitHub
+  - Follow this link to my repo - https://github.com/camerong-dev/inspire-pc
+  - Click on the 'Fork' button near top-right of the screen.
+  - A copy of my repository should now be availble in your list of GitHub repos
+
+
+## Cloning the GitHub Repo
+
+  - Sign Up / Login to GitHub
+  - Follow this link to the MyPSE.ie repository: https://github.com/camerong-dev/inspire-pc
+  - Click on the <> Code button near the top-right of the page.
+  - Access the 'Code' menu from above the main directory window and choose a preferred cloning option by selecting either HTTPS or GitHub CLI. An SSH key is required should you prefer that option.
+  - Press the overlapping squares icon to copy the link to the repository.
+  - Open the code editor of your choice.
+  - Create a new working directory for the cloned repo.
+  - Use the 'git clone command and paste in the copied link.
+  - Press enter and the repo will be cloned locally to your machine.
+  - Setup and activate your local development environment.
+  - Install the project requirements using the command -- pip3 install -r requirements.txt
+  - Create a Heroku app for your Clone and add the appropriate Config Vars using the instructions above.
+  - Create an env.py file that includes the appropriate DATABSE_URL, SECRET_KEY and CLOUDINARY_URL settings.
+  - Add 'localhost' to ALLOWED_HOSTS in settings.py
+  - Use the command -- python3 manage.py makemigrations followed by -- python3 manage.py migrate to setup a local copy of the project database.
+  - Use the command python3 manage.py runserver to run the app on a development server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
