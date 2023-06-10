@@ -17,7 +17,7 @@ Inspire PC is a site for keen computer enthusiasts to upload pictures and specs 
   - [Future Features](#future-features)
 - [Technologies](#technologies)
   - [Languages & Frameworks](#languages-and-frameworks)
-  - [Libraries](#libraries)
+  - [Other](#other)
 - [Testing](#testing)
 
 ## **User Experiences**
@@ -206,6 +206,30 @@ All colors used throughout are listed below.  I found the blue color on [colormi
   - Video support for posts
 
 [Back to top](#contents)
+
+## **Technologies**
+### **Languages and Frameworks**
+  - [Python](https://www.python.org/)
+  - [Django](https://www.djangoproject.com/)
+  - [Bootstrap](https://getbootstrap.com/)
+  - [HTML5](https://en.wikipedia.org/wiki/HTML5)
+  - [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+### **Other**
+  - [ElephantSQL](https://www.elephantsql.com/) was used as the postgres, database system
+  - [Font Awesome](https://fontawesome.com/) was used to provide icons throughout the app
+  - [Heroku](https://www.heroku.com/home?) was used to host my deployed project
+  - [TinyPNG](https://tinypng.com/) was used to decrease size of uploaded files
+  - [Balsamiq](https://balsamiq.com/) was used to create wireframes
+  - [Auto PEP8](https://pypi.org/project/autopep8/) was used at the end to try and tidy up some of my python files
+
+
+## **Testing**
+
+The app was tested during and after development. Results can be found [here](https://github.com/camerong-dev/inspire-pc/blob/main/TESTING.md)
+
+
+
 
 
 
