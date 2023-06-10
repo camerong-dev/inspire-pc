@@ -155,5 +155,8 @@ To note I have not put all python files through a validator due to the fact some
 
 ## Device Testing
 
+Using Google Developer Tools, I mimicked mobile phones in the browser to test for scaling and to ensure all data was displayed clearly.   During my testing everything behaved as intended and all images were
+very clear, all containers scaled down to fit corectly.  All functionality was still working with no issues.
 
+Return to main [README](https://github.com/camerong-dev/inspire-pc#testing)
  
