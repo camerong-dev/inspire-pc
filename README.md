@@ -107,7 +107,6 @@ All colors used throughout are listed below.  I found the blue color on [colormi
   - Title and author is shown on left side of screen.
   - Date of post being created is in bottom right.
   - View button changes color when hovered.
-  - Selecting anywhere on this card will load user into the detail view.
 
 [Back to top](#contents)
 
