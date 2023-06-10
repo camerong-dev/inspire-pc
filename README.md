@@ -20,6 +20,12 @@ Inspire PC is a site for keen computer enthusiasts to upload pictures and specs 
   - [Other](#other)
 - [Testing](#testing)
 - [Deployment](#deployment)
+  - [Database](#database)
+  - [Heroku](#heroku)
+  - [Cloudinary](#cloudinary)
+  - [Forking](#forking)
+  - [Cloning](#cloning)
+- [Credits](#credits)
 
 ## **User Experiences**
 ### **User Stories**
@@ -234,7 +240,7 @@ The app was tested during and after development. Results can be found [here](htt
 [Back to top](#contents)
 
 ## **Deployment**
-### Database
+### **Database**
 To create a managed postgres database go to [ElephantSQL](https://www.elephantsql.com/) and Sign Up / Login.
   - Click on 'Create new instance'
 
@@ -252,7 +258,9 @@ To create a managed postgres database go to [ElephantSQL](https://www.elephantsq
 
 You can now use this URL when linking the database to the project repository.
 
-### Deploying to Heroku
+[Back to top](#contents)
+
+### **Heroku**
 
   - Sign Up / Login to Heroku
   - Create a new app from the Heroku dashboard
@@ -278,7 +286,9 @@ You can now use this URL when linking the database to the project repository.
   - Link the DATABASES value to the env.py file with the following code: DATABASES = { 'default': dj_database_url.parse(os.environ.get('DATABASE_URL')) }
   - You can now migrate the app models to the new database using the command: "python3 manage.py makemigrations" then Python3 manage.py migrate.
 
-## Cloudinary
+[Back to top](#contents)
+
+## **Cloudinary**
 
   - Signup/Signin to Cloudinary
   - Copy the 'cloudinary url' from your account dashboard and paste it as the CLOUDINARY_URL value in env.py.
@@ -309,16 +319,20 @@ The STATIC section of settings.py should resemble the following image:
   - Deploy via the 'Deploy Main Branch' button in the Deployment page of HEROKU.
   - If you receive an success message, you can click the link provided to view the app in the web browser.
 
+[Back to top](#contents)
 
-## Forking the GitHub Repo
+
+## **Forking**
 
   - Sign up / Login to GitHub
   - Follow this link to my repo - https://github.com/camerong-dev/inspire-pc
   - Click on the 'Fork' button near top-right of the screen.
   - A copy of my repository should now be availble in your list of GitHub repos
 
+[Back to top](#contents)
 
-## Cloning the GitHub Repo
+
+## **Cloning**
 
   - Sign Up / Login to GitHub
   - Follow this link to the MyPSE.ie repository: https://github.com/camerong-dev/inspire-pc
@@ -337,78 +351,31 @@ The STATIC section of settings.py should resemble the following image:
   - Use the command -- python3 manage.py makemigrations followed by -- python3 manage.py migrate to setup a local copy of the project database.
   - Use the command python3 manage.py runserver to run the app on a development server.
 
+[Back to top](#contents)
 
+## **Credits**
 
+### UI 
 
+  - Navbar is a slightly modified version of bootstrap's fixed nav bar, which can be found [here](https://getbootstrap.com/docs/5.3/examples/navbar-fixed/)
+  - The home page uses bootstrap's album example, which can be found [here](https://getbootstrap.com/docs/5.3/examples/album/)
+  - [Font Awesome](https://fontawesome.com/) for the icons used throughout
+  - [Icons 8](https://icons8.com/) for the images used on the detail page
 
+### Code
 
+  - The formatChecker.py was taken from [here](https://stackoverflow.com/questions/2472422/django-file-upload-size-limit)
+  - To get the user model setup I used this [video](https://www.youtube.com/watch?v=mpfHDSmqHds&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=10) as a reference
+  - Used this [video](https://www.youtube.com/watch?v=PTsljbR-Cmo&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=13) to help me make my filter view
+  - Used this [video](https://www.youtube.com/watch?v=2MkULPXXXLk&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=15) to help make the filter dropdown on home page
+  - Used this [documentation](https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-editing/) for my Edit and Delete functionality
+  - Used this [documentation](https://docs.djangoproject.com/en/4.2/topics/pagination/) for my pagination implementation
 
 
+### Other Sources
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  - [Django Documentation](https://docs.djangoproject.com/en/4.2/)
+  - [Django Guide](https://www.w3schools.com/django/index.php)
+  - [Bootstrap Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+  - [Django Web Framework](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django)
 
