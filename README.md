@@ -370,6 +370,7 @@ The STATIC section of settings.py should resemble the following image:
   - Used this [video](https://www.youtube.com/watch?v=2MkULPXXXLk&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=15) to help make the filter dropdown on home page
   - Used this [documentation](https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-editing/) for my Edit and Delete functionality
   - Used this [documentation](https://docs.djangoproject.com/en/4.2/topics/pagination/) for my pagination implementation
+  - Used this [documentation](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing) for my automated tests
 
 
 ### Other Sources
