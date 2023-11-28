@@ -2,6 +2,9 @@
 
 Inspire PC is a site for keen computer enthusiasts to upload pictures and specs of their machines.  Or for newbies looking for inspiration to start on their first PC. 
 
+## Grade
+Grade PASS 
+
 ## Live Site
 [Inspire PC](https://inspire-pc.herokuapp.com/)
 
